@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 form-login">
+      <!-- Insert form here -->
+
+      <h2>Novo serviço</h2>
+
+      <%= simple_form_for [@service] do |f| %>
+        <%= f.input :nome %>
+        <%= f.association :category, label_method: :nome %>
+        <%= f.input :preço %>
+        <%= f.submit "Criar serviço", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
