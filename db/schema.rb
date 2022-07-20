@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_20_201902) do
+ActiveRecord::Schema.define(version: 2022_07_20_212644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,15 @@ ActiveRecord::Schema.define(version: 2022_07_20_201902) do
   end
 
   create_table "coins", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "montante_cents", default: 0, null: false
+    t.bigint "user_id"
+    t.bigint "worker_id"
     t.index ["offer_id"], name: "index_coins_on_offer_id"
     t.index ["user_id"], name: "index_coins_on_user_id"
+    t.index ["worker_id"], name: "index_coins_on_worker_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -57,13 +59,13 @@ ActiveRecord::Schema.define(version: 2022_07_20_201902) do
 
   create_table "services", force: :cascade do |t|
     t.string "nome"
-    t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "preço_cents", default: 0, null: false
+    t.bigint "worker_id"
     t.index ["category_id"], name: "index_services_on_category_id"
-    t.index ["user_id"], name: "index_services_on_user_id"
+    t.index ["worker_id"], name: "index_services_on_worker_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,11 +104,9 @@ ActiveRecord::Schema.define(version: 2022_07_20_201902) do
   end
 
   add_foreign_key "coins", "offers"
-  add_foreign_key "coins", "users"
   add_foreign_key "offers", "services"
   add_foreign_key "offers", "users"
   add_foreign_key "reviews", "services"
   add_foreign_key "reviews", "users"
   add_foreign_key "services", "categories"
-  add_foreign_key "services", "users"
 end

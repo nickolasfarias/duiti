@@ -1,0 +1,19 @@
+<h1>Meus serviços</h1>
+
+<%= link_to "Criar serviço", new_service_path, class: "btn btn-primary"%>
+
+<% if @services.empty? %>
+  <h2>Você ainda não criou nenhum serviço</h2>
+<% else %>
+  <div class="cards container mt-3">
+    <div class="row">
+      <% @services.each do |service| %>
+        <div class="card-service col-12">
+          <p><%= service.nome %></p>
+          <p><%= service.category.nome %></p>
+          <p><%= service.preço %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
