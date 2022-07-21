@@ -7,13 +7,15 @@
 <% else %>
   <div class="cards container mt-3">
     <div class="row">
+      <div class="col-3"></div>
       <% @services.each do |service| %>
-        <div class="card-service col-12">
-          <p><%= service.nome %></p>
-          <p><%= service.category.nome %></p>
-          <p><%= service.preço %></p>
+        <div class="card-service col-6">
+          <h3>Nome: <%= service.nome %></h3>
+          <h3>Categoria: <%= service.category.nome %></h3>
+          <h3>Preço/hora: <%= service.preço %></h3>
         </div>
       <% end %>
+      <div class="col-3"></div>
     </div>
   </div>
 <% end %>
