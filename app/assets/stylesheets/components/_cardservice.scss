@@ -1,6 +1,101 @@
-.card-service {
-  background-color: #0D6EFD;
-  border-radius: 20px;
-  height:45vh;
-  color:white;
+@media (min-width: 300px){
+  .card-service {
+    background-color: #0D6EFD;
+    border-radius: 20px;
+    height:52vh;
+    color:white;
+  }
+
+  .buttons-service {
+    margin-top: 30px;
+  }
+
+  .btn-service {
+    color:white;
+    background-color:#0c4396;
+    border:none;
+    border-radius: 12px;
+  }
+
+  .btn-service:hover {
+    background-color: #0b2f64;
+  }
+
+  .btn-edit-service {
+    color:white;
+    background-color:#0c4396;
+    border:none;
+    border-radius: 12px;
+    padding: 12px 6px;
+    font-size: 13px;
+  }
+
+  .btn-edit-service:hover {
+    background-color: #0b2f64;
+  }
+
+  .btn-destroy-service {
+    color:white;
+    background-color:#0c4396;
+    border:none;
+    border-radius: 12px;
+    padding: 12px 6px;
+    font-size: 13px;
+  }
+
+  .btn-destroy-service:hover {
+    background-color: #0b2f64;
+  }
+
+  .name {
+    font-size:18px;
+  }
+
+  .category {
+    font-size:18px;
+  }
+
+  .price {
+    font-size:18px;
+  }
+}
+
+
+@media (min-width: 800px){
+  .card-service {
+    background-color: #0D6EFD;
+    border-radius: 20px;
+    height:45vh;
+    color:white;
+  }
+
+  .btn-edit-service {
+    color:white;
+    background-color:#0c4396;
+    border:none;
+    border-radius: 12px;
+    padding: 15px 10px;
+    font-size: 20px;
+  }
+
+  .btn-destroy-service {
+    color:white;
+    background-color:#0c4396;
+    border:none;
+    border-radius: 12px;
+    padding: 15px 10px;
+    font-size: 20px;
+  }
+
+  .name {
+    font-size:25px;
+  }
+
+  .category {
+    font-size:25px;
+  }
+
+  .price {
+    font-size:25px;
+  }
 }
